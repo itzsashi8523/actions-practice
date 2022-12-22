@@ -8,3 +8,10 @@ jobs:
         run: date
       - name: print message
         run: echo "Hi $USER"
+  create-user:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create user
+        run: useradd tom
+      - name: print message
+        run: echo "Hi $USER"  
