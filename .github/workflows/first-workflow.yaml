@@ -1,0 +1,10 @@
+name: first-workflow
+on: workflow_dispatch
+jobs:
+  display-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display date
+        run: date
+      - name: print message
+        run: echo "Hi $USER"
