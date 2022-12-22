@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: create user
-        run: useradd tom
+        run: sudo useradd tom
       - name: print message
         run: echo "Hi $USER"  
