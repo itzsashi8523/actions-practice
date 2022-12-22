@@ -14,4 +14,13 @@ jobs:
       - name: create user
         run: sudo useradd tom
       - name: print message
-        run: echo "Hi $USER"  
+        run: echo "Hi $USER"
+  run-multiple-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: multiple-commands
+        run: |
+          echo "Hello Friends"
+          date
+          cat /etc/passwd
+          ls -l /
