@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: multiple-commands
         run: |
-          sleep: 30
+          sleep 30
           echo "Hello Friends"
           date
           cat /etc/passwd
