@@ -6,3 +6,8 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2.6.0
+      - name: list the folder
+        run: |
+          ls -l
+          pwd
+          date
