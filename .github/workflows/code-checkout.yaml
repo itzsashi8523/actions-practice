@@ -1,4 +1,4 @@
-name: on-push-example
+name: code-checkout
 on: workflow_dispatch
 jobs:
   pull-the-code:
