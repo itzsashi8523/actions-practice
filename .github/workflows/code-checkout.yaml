@@ -8,6 +8,6 @@ jobs:
         uses: actions/checkout@v2.6.0
       - name: list the folder
         run: |
-          ls -l
+          ls -la
           pwd
           date
