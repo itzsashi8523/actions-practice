@@ -6,7 +6,7 @@ on:
       - develop
       - 'release/**'
 jobs:
-  pull-the-code
+  pull-the-code:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
