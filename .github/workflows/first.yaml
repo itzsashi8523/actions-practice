@@ -4,7 +4,7 @@ jobs:
   display-date:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hai
-        run: echo "Hai"
-      - name: Print goodbye
-        run: echo "Bye"
+      - name: Print date
+        run: date
+      - name: list root
+        run: ls -l /
