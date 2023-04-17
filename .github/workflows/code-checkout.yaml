@@ -4,9 +4,11 @@ jobs:
   code-checkout:
     runs-on: ubuntu-latest
     steps:
-      - name: pull the code from github
+      - name: checkout code from git
         uses: actions/checkout@v3
-      - name: where you are
+        when:
+          branch: master
+      - name: find your location
         run: pwd
-      - name: contents in repo
-        run: ls -la /home/runner/work/actions-practice/actions-practice/
+      - name: list your repo
+        run: ls -al
