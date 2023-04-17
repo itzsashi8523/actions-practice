@@ -7,4 +7,4 @@ jobs:
       - name: pull the code from github
         uses: actions/checkout@v3
       - name: list the cloned repo
-        run: ls -al
+        run: ls -al actions-practice
