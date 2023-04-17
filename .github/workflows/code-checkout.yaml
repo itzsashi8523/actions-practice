@@ -6,8 +6,6 @@ jobs:
     steps:
       - name: checkout code from git
         uses: actions/checkout@v3
-          when:
-            branch: master
       - name: find your location
         run: pwd
       - name: list your repo
