@@ -1,17 +1,6 @@
 name: code-checkout
 on: push
 jobs:
-  clone-a-repo:
-    runs-on: ubuntu-latest
-    steps:
-      - name: clone the repo from github
-        uses: actions/checkout@v3
-        with:
-          ref: 'main'
-      - name: check where are you now
-        run: pwd
-      - name: list the repo folder
-        run: ls -la
   install-nodejs:
     runs-on: ubuntu-latest
     steps:
@@ -19,3 +8,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: check node version
+        run: node -v

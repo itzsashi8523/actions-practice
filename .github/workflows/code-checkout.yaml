@@ -1,5 +1,5 @@
 name: code-checkout
-on: push
+on: workflow_dispatch
 jobs:
   clone-a-repo:
     runs-on: ubuntu-latest
@@ -7,8 +7,15 @@ jobs:
       - name: clone the repo from github
         uses: actions/checkout@v3
         with:
-          ref: 'develop'
+          ref: 'main'
       - name: check where are you now
         run: pwd
       - name: list the repo folder
         run: ls -la
+  install-nodejs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
