@@ -12,6 +12,8 @@ jobs:
         run: pwd
       - name: list the repo folder
         run: ls -la
+  install-nodejs:
+    runs-on: ubuntu-latest
     steps:
       - name: install NodeJS
         uses: actions/setup-node@v3
