@@ -9,6 +9,6 @@ jobs:
         with:
           ref: 'main'
       - name: check where you are
-        sh: pwd
+        run: pwd
       - name: list the repo files
-        sh: ls -al
+        run: ls -al
