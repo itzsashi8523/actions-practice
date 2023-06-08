@@ -1,5 +1,5 @@
 name: code-checkout
-on: push
+on: workflow_dispatch
 jobs:
   install-nodejs:
     runs-on: ubuntu-latest
