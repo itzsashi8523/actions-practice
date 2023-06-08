@@ -1,0 +1,14 @@
+name: code-checkout
+on: push
+jobs:
+  clone-a-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull the repo
+        uses: actions/checkout@v3
+        with:
+          ref: 'main'
+      - name: check where you are
+        sh: pwd
+      - name: list the repo files
+        sh: ls -al
