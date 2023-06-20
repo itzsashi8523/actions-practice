@@ -9,7 +9,7 @@ jobs:
         with:
           ref: 'main'
       - name: listing the repo contents
-        run: ls -l actions-practice
+        run: ls -l /home/runner/work/actions-practice/actions-practice
       - name: install nodejs
         uses: actions/setup-node@v3
         with:
