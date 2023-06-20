@@ -1,20 +1,16 @@
-name: run-a-shell-command
+name: code-checkout
 on: workflow_dispatch
 jobs:
-  shell-commands-execute:
+  code-checkout:
     runs-on: ubuntu-latest
-    steps:
-      - name: display date
-        run: date
-      - name: list current folder
-        run: ls -l /
-  multiple-commands-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: multiple commands run
-        run: |
-            echo "Hi $USER"
-            echo "Welcome to GH Actions Course"
-            ls -l /var/
-            mkdir -p /opt/test123
-            ls -l /opt
+      steps:
+        - name: checkout a repository
+          uses: actions/checkout@v3
+          with:
+            ref: 'main'
+        - name: listing the repo contents
+          run: ls -l actions-practice
+        - name: install nodejs
+          uses: actions/setup-node@v3
+          with:
+            node-version: '18'
