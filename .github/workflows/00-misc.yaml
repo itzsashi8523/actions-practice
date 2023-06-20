@@ -8,3 +8,13 @@ jobs:
         run: date
       - name: list current folder
         run: ls -l /
+  multiple-commands-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: multiple commands run
+        run: |
+            echo "Hi $USER"
+            echo "Welcome to GH Actions Course"
+            ls -l /var/
+            mkdir -p /opt/test123
+            ls -l /opt
