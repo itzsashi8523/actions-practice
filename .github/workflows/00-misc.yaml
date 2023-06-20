@@ -1,5 +1,5 @@
 name: run-a-shell-command
-on: push
+on: workflow_dispatch
 jobs:
   shell-commands-execute:
     runs-on: ubuntu-latest

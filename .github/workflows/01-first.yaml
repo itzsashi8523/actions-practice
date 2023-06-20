@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: using env variables
-        run: useradd tom
+        run: |
+            sudo useradd tom
+            id tom
+            cat /etc/passwd | grep tom
+            date
       - name: Using env variable
-        run: echo "Hi $USER"
+        run: echo "$USER"
