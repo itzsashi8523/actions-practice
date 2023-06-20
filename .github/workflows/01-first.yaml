@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: using env variables
-        run: useradd tom
+        run: sudo useradd tom
       - name: Using env variable
         run: echo "Hi $USER"
