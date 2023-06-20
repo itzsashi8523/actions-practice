@@ -11,3 +11,8 @@ jobs:
             cat /etc/passwd | grep tom
             date
             echo "Hi $USER"
+      - name: Using env variable
+        run: echo "$USER"
+        run: sudo useradd tom
+      - name: Using env variable
+        run: echo "Hi $USER"
