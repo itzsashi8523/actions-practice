@@ -3,14 +3,14 @@ on: workflow_dispatch
 jobs:
   code-checkout:
     runs-on: ubuntu-latest
-      steps:
-        - name: checkout a repository
-          uses: actions/checkout@v3
-          with:
-            ref: 'main'
-        - name: listing the repo contents
-          run: ls -l actions-practice
-        - name: install nodejs
-          uses: actions/setup-node@v3
-          with:
-            node-version: '18'
+    steps:
+      - name: checkout a repository
+        uses: actions/checkout@v3
+        with:
+          ref: 'main'
+      - name: listing the repo contents
+        run: ls -l actions-practice
+      - name: install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
