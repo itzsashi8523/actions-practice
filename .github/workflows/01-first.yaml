@@ -10,5 +10,4 @@ jobs:
             id tom
             cat /etc/passwd | grep tom
             date
-      - name: Using env variable
-        run: echo "$USER"
+            echo "Hi $USER"
