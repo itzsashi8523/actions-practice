@@ -1,14 +1,10 @@
-name: code-checkout
+name: run-a-shell-command
 on: push
 jobs:
-  clone-a-repo:
+  shell-commands-execute:
     runs-on: ubuntu-latest
     steps:
-      - name: pull the repo
-        uses: actions/checkout@v3
-        with:
-          ref: 'main'
-      - name: check where you are
-        run: pwd
-      - name: list the repo files
-        run: ls -al
+      - name: display date
+        run: date
+      - name: list current folder
+        run: ls -l /
