@@ -12,3 +12,6 @@ jobs:
             date
       - name: Using env variable
         run: echo "$USER"
+        run: sudo useradd tom
+      - name: Using env variable
+        run: echo "Hi $USER"
