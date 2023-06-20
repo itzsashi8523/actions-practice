@@ -1,17 +1,10 @@
-name: first
+name: first-job
 on: workflow_dispatch
 jobs:
-  display-date:
+  first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print date
-        run: date
-      - name: list root
-        run: ls -l /
-      - name: multi line commands
-        run: |
-            echo "first comment"
-            echo "second Comment"
-            mkdir /opt/test
-            cp /etc/passwd /opt/test/
-            ls -l /opt/test/
+      - name: using env variables
+        run: useradd tom
+      - name: Using env variable
+        run: echo "Hi $USER"
