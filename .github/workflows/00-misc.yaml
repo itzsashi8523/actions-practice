@@ -1,4 +1,4 @@
-name: practice-example
+name: practice-example1
 on: workflow_dispatch
 jobs:
   run-commands:
