@@ -8,7 +8,7 @@ jobs:
         run: |
             date
             echo "Hello $USER"
-            ls -l /root
+            sudo ls -l /root
             cat /etc/passwd
   code-checkout:
     runs-on: ubuntu-latest
