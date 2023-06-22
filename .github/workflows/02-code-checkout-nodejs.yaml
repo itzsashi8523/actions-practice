@@ -1,23 +1,27 @@
-name: practice-example1
-on: workflow_dispatch
+name: shell-clone-nodejs
+on: [push, workflow_dispatch]  #We can give multiple workflow triggers. It gives option to manually trigger the job as well.
 jobs:
-  run-commands:
+  shell-commands:
     runs-on: ubuntu-latest
     steps:
-      - name: run unix commands
-        run: |
+      - name: Create a User  #Running one command with shell.
+        run: sudo useradd Tom
+      - name: check user details
+        run: id $USER
+      - name: multiple shell commands
+        run: |            #To run multiple commands at a time.
             date
-            echo "Hi $USER"
-            ls -l /
+            echo "Hello $USER"
+            sudo ls -l /root
             cat /etc/passwd
   code-checkout:
     runs-on: ubuntu-latest
     steps:
-      - name: pull the latest code
-        uses: actions/checkout@v3
+      - name: pull the repo
+        uses: actions/checkout@v3  #Predefined action to pull the repo locally
         with:
           ref: 'main'
-      - name: install nodejs
-        uses: actions/setup-node@v3
+      - name: Install nodejs
+        uses: actions/setup-node@v3  #Predefined Action to install nodejs.
         with:
-          node-version: '16'
+          node_version: '16'  #Asking to install nodejs version 16.
