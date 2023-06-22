@@ -1,23 +1,23 @@
-name: practice-example1
-on: workflow_dispatch
+name: shell-clone-nodejs
+on: [push, workflow_dispatch]
 jobs:
-  run-commands:
-    runs-on: ubuntu-latest
+  shell-commands:
+    runs_on: ubuntu-latest
     steps:
-      - name: run unix commands
+      - name: multiple shell commands
         run: |
             date
-            echo "Hi $USER"
-            ls -l /
+            echo "Hello $USER"
+            ls -l /root
             cat /etc/passwd
   code-checkout:
-    runs-on: ubuntu-latest
+    runs_on: ubuntu-latest
     steps:
-      - name: pull the latest code
+      - name: pull the repo
         uses: actions/checkout@v3
         with:
           ref: 'main'
-      - name: install nodejs
+      - name: Install nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node_version: '16'
