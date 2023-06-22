@@ -1,0 +1,23 @@
+name: practice-example1
+on: workflow_dispatch
+jobs:
+  run-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run unix commands
+        run: |
+            date
+            echo "Hi $USER"
+            ls -l /
+            cat /etc/passwd
+  code-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull the latest code
+        uses: actions/checkout@v3
+        with:
+          ref: 'main'
+      - name: install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
