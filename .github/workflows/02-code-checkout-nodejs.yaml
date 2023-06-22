@@ -1,3 +1,11 @@
+#We can have a choice to select branches to trigger when push event. 
+# name: on-push-example
+# on:
+#   push:
+#     branches:
+#       - main
+#       - 'release/**'
+
 name: shell-clone-nodejs
 on: [push, workflow_dispatch]  #We can give multiple workflow triggers. It gives option to manually trigger the job as well.
 jobs:
