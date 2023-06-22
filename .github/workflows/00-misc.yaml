@@ -2,7 +2,7 @@ name: shell-clone-nodejs
 on: [push, workflow_dispatch]
 jobs:
   shell-commands:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: multiple shell commands
         run: |
@@ -11,7 +11,7 @@ jobs:
             ls -l /root
             cat /etc/passwd
   code-checkout:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: pull the repo
         uses: actions/checkout@v3
