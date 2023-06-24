@@ -5,4 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: getting actions context
-        run: echo "${{ toJSON(github) }}"
+        run: echo "${{ toJSON(github) }}"  #This is to print all the metadata, which is called as "context" in github terminology. It gives all the details about the repo, repo url, owner, which env the jobs are running, running host informations etc. See the example below.
+        # Run echo "{
+        # {
+        #   token: ***,
+        #   job: output-context,
+        #   ref: refs/heads/main,
+        #   sha: f9cc028fcbb2b38fedc2dfc27b19a842dbea0f18,
+        #   repository: itzsashi8523/actions-practice,
+        #   repository_owner: itzsashi8523,
+        #   repository_owner_id: 31694888,
+        #   repositoryUrl: git://github.com/itzsashi8523/actions-practice.git,
+        #   run_id: 5362757849,
+        #   run_number: 3,
+        #   retention_days: 90,
