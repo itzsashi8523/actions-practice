@@ -1,0 +1,8 @@
+name: getting context of github actions
+on: workflow_dispatch
+jobs:
+  output-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: getting actions context
+        run: echo "{{ github }}"
