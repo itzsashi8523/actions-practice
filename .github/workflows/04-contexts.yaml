@@ -21,4 +21,4 @@ jobs:
       - name: display repo owner
         run: echo $OWNER
         env:
-          OWNER: ${{ toJSON(github.orepository_ownerwner) }}
+          OWNER: ${{ toJSON(github.repository_owner) }}
