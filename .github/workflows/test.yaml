@@ -4,5 +4,5 @@ jobs:
   trigger-event:
     runs-on: ubuntu-latest
     steps:
-      - name: trigger even
+      - name: trigger event
         run: echo "{{ toJSON(github) }}"
