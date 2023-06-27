@@ -4,7 +4,9 @@ jobs:
   event-triggers:
     runs-on: ubuntu-latest
     steps:
-      - name: trigger event
+      - name: using gh contexts - github
         run: echo $JSON
         env:
           JSON: ${{ toJSON(github) }}
+      - name: using gh contexts - github.workflow
+        run: echo "{{ toJSON(github.workflow) }}"
