@@ -10,3 +10,5 @@ jobs:
           JSON: ${{ toJSON(github) }}
       - name: using gh contexts - github.workflow
         run: echo "${{ toJSON(github.workflow) }}"
+      - name: display run-id
+        run: echo "${{ toJSON(github.run_id) }}"
