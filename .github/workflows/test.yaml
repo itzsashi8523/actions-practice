@@ -1,7 +1,7 @@
-trigger jobs:
+trigger-jobs:
 on: workflow_dispatch
 jobs:
-  trigger events:
+  trigger-events:
     runs-on: ubuntu-latest
     steps:
       - name: trigger event
