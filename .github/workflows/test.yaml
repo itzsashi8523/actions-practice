@@ -1,8 +1,8 @@
-name: trigger events
+name: my-first
 on: push
 jobs:
-  trigger-event:
+  event-triggers:
     runs-on: ubuntu-latest
     steps:
       - name: trigger event
-        run: echo "${{ toJSON(github) }}" 
+        run: echo "${{ toJSON(github) }}"
