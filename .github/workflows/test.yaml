@@ -1,8 +1,8 @@
-trigger-jobs:
-on: workflow_dispatch
+name: trigger events
+on: push
 jobs:
-  trigger-events:
+  trigger-event:
     runs-on: ubuntu-latest
     steps:
-      - name: trigger event
-        run: echo "{{ toJOSN(github) }}"
+      name: trigger even
+      run: echo "{{ toJSON(github) }}"
