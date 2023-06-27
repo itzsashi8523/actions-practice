@@ -9,4 +9,4 @@ jobs:
         env:
           JSON: ${{ toJSON(github) }}
       - name: using gh contexts - github.workflow
-        run: echo "{{ toJSON(github.workflow) }}"
+        run: echo "${{ toJSON(github.workflow) }}"
