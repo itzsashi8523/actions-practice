@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display today's date
-        run: date
+        run: ls -l
       - name: Clone the Repo Locally
         uses: actions/checkout@v3
         with:
