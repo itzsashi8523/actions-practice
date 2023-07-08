@@ -1,5 +1,8 @@
 name: filters example
 on:
+  pull_request:
+    types: [opened, reopened]
+  workflow_dispatch:
   push:
     branches:
       - 'develop'
