@@ -4,7 +4,8 @@
 #   push:
 #     branches:
 #       - main
-#       - 'release/**'
+#       - 'release/**'  ## '/' - slashes are allowed in branch names, so when we give release/** it means it allowes the branch names which are having slashes in its name.
+
 
 name: shell-clone-nodejs
 on: workflow_dispatch
