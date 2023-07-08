@@ -11,6 +11,8 @@ jobs:
   push-filter-example:
     runs-on: ubuntu-latest
     steps:
+      - name: Display today's date
+        run: date
       - name: Clone the Repo Locally
         uses: actions/checkout@v3
         with:
