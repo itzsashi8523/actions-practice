@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'main'
+      - 'main'    #ee block meaning enti antey, whenever a PR opened and push request to the branches defined here - trigger a workflow ani ardham. Manam develop ane branch lo work chesthaam(like Jira numbers we creare) kaani avi push lo undavu kaabatti workflow trigger avvadu, once aa PR approve iyyaka main ki merge chesthaam kaabatti as per activity type defined here like when a push event comes to main branch trigger the workflow., that is what we are using in our current env.
       - 'stage'
 jobs:
   push-filter-example:
