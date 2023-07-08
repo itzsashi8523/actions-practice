@@ -12,5 +12,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: main
+      - name: Install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '16'
       - name: Display repo details 
         run: echo "${{ toJson(github)}}"
