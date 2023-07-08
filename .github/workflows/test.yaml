@@ -1,5 +1,5 @@
 name: my-first
-on: push
+on: workflow_dispatch
 jobs:
   event-triggers:
     runs-on: ubuntu-latest
