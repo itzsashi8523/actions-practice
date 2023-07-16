@@ -19,6 +19,6 @@ jobs:
   read-variables:
   needs: display-variables
     runs-on: ubuntu-latest
-      steps:
-        - name: Get Vars
-          run: echo "Hi $DB_USER"
+    steps:
+      - name: Get Vars
+        run: echo "Hi $DB_USER"
