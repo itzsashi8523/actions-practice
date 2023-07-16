@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: print envs
         run: |
-            echo "${{ DB_NAME }}"
-            echo "${{ DB_USER }}"
-            echo "${{ DB_PWD}}"
+            echo $DB_NAME
+            echo $DB_USER
+            echo $DB_PWD
