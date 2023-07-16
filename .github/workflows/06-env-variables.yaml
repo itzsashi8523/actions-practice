@@ -17,8 +17,8 @@ jobs:
             echo $DB_USER
             echo $DB_PWD
   read-variables:
-    runs-on: ubuntu-latest
     needs: display-variables
+    runs-on: ubuntu-latest
       steps:
         - name: Get Vars
           run: Hi $DB_USER
