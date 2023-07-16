@@ -21,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest
       steps:
         - name: Get Vars
-          run: Hi $DB_USER
+          run: echo "Hi $DB_USER"
