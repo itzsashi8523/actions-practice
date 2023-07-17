@@ -10,12 +10,15 @@ env:
 jobs:
   display-variables:
     runs-on: ubuntu-latest
+    env:
+      DB_PORT: 6543
     steps:
       - name: print envs
         run: |
             echo "DB NAME Is: ${{ env.DB_NAME }}"
             echo "DB User Is: ${{ env.DB_USER }}"
             echo $DB_PWD
+            echo "DB Port Is: ${{ env.DB_PORT }}"
   read-variables:
     needs: display-variables
     runs-on: ubuntu-latest
