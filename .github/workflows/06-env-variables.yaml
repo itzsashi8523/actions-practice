@@ -29,15 +29,3 @@ jobs:
             echo "DB User Is: ${{ env.DB_USER }}"
             echo $DB_PWD
             echo "DB Port Is: ${{ env.DB_PORT }}"
-  secret-variables:
-    needs: 
-      - read-variables
-      - display-variables
-    runs-on: ubuntu-latest
-    steps:
-      - name: print envs
-        run: |
-            echo "DB NAME Is: ${{ secrets.DB_NAME }}"
-            echo "DB User Is: ${{ secrets.DB_USER }}"
-            echo "$DB_PWD Is: ${{ secrets.DB_PWD }}"
-            echo "DB Port Is: ${{ secrets.DB_PORT }}"
