@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: print envs
         run: |
-            echo $DB_NAME
-            echo $DB_USER
+            echo "DB NAME Is: ${{ env.DB_NAME }}"
+            echo "DB User Is: ${{ env.DB_USER }}"
             echo $DB_PWD
   read-variables:
     needs: display-variables
