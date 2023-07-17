@@ -1,8 +1,9 @@
 name: print-env-variables
 on:
-  push:
-    branches:
-      - develop
+  workflow_dispatch
+#  push:
+#    branches:
+#      - develop
 env:
   DB_NAME: my-test-db
   DB_USER: sasi
