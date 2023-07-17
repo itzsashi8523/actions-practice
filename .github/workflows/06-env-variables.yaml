@@ -1,5 +1,9 @@
 name: print-env-variables
 on:
+  workflow_dispatch
+#  push:
+#    branches:
+#      - develop
   push:
     branches:
       - develop
@@ -8,11 +12,28 @@ env:
   DB_USER: sasi
   DB_PWD: S@sik@nth123
 jobs:
+  read-variables:
+    runs-on: ubuntu-latest
+    env:
+      DB_PORT: 6543
+    steps:
+      - name: print envs
+        run: |
+            echo "${{ env.DB_NAME }}"
+            echo "${{ env.DB_USER }}"
+            echo "${{ env.DB_PWD }}"
+            echo "${{ env.DB_PORT }}"
+  display-variables:
+    needs: read-variables
   display-variables:
     runs-on: ubuntu-latest
     steps:
       - name: print envs
         run: |
+            echo "DB NAME Is: ${{ env.DB_NAME }}"
+            echo "DB User Is: ${{ env.DB_USER }}"
+            echo $DB_PWD
+            echo "DB Port Is: ${{ env.DB_PORT }}"
             echo $DB_NAME
             echo $DB_USER
             echo $DB_PWD
