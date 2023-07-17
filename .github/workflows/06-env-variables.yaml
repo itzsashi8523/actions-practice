@@ -4,6 +4,9 @@ on:
 #  push:
 #    branches:
 #      - develop
+  push:
+    branches:
+      - develop
 env:
   DB_NAME: my-test-db
   DB_USER: sasi
@@ -22,6 +25,7 @@ jobs:
             echo "${{ env.DB_PORT }}"
   display-variables:
     needs: read-variables
+  display-variables:
     runs-on: ubuntu-latest
     steps:
       - name: print envs
@@ -30,3 +34,12 @@ jobs:
             echo "DB User Is: ${{ env.DB_USER }}"
             echo $DB_PWD
             echo "DB Port Is: ${{ env.DB_PORT }}"
+            echo $DB_NAME
+            echo $DB_USER
+            echo $DB_PWD
+  read-variables:
+    needs: display-variables
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Vars
+        run: echo "Hi $DB_USER"
