@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: display date
         run: |
-          date
-          ls -l
-          who
+            date
+            ls -l
+            who
       - name: env vars display
         run: echo "${{ env.USER }}"
   greetings:
