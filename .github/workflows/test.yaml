@@ -1,9 +1,9 @@
-name: env-variables
+name: env-vars
 on: workflow_dispatch
 env:
   USER: sasi
 jobs:
-  display_vars:
+  display_golbal_vars:
     runs-on: ubuntu-latest
     steps:
       - name: display date
@@ -13,4 +13,12 @@ jobs:
             who
       - name: env vars display
         run: echo "${{ env.USER }}"
-        
+  display_local_vars:
+    needs: display_global_vars
+    runs-on: ubuntu-latest
+    env:
+      FIRST_NAME: Akula
+      LAST_NAME: Kanth
+    steps:
+      - name: display local vars
+        run: echo "{{ env.FIRST_NAME }}"
