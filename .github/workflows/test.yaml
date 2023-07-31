@@ -4,7 +4,7 @@ env:
   user: sasi
 jobs:
   display_vars:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: display date
         run: |
