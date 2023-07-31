@@ -21,8 +21,6 @@ jobs:
             echo "${{ env.DB_PWD }}"
             echo "${{ env.DB_PORT }}"
   display-variables:
-    needs: read-variables
-  display-variables:
     runs-on: ubuntu-latest
     steps:
       - name: print envs
@@ -34,9 +32,9 @@ jobs:
             echo $DB_NAME
             echo $DB_USER
             echo $DB_PWD
-  read-variables:
-    needs: display-variables
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Vars
-        run: echo "Hi $DB_USER"
+#  read-variables:
+#    needs: display-variables
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Get Vars
+#        run: echo "Hi $DB_USER"

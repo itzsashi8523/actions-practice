@@ -18,10 +18,9 @@ jobs:
     first_name: akula
     last_name: kanth
     needs: display_vars
-      runs-on: ubuntu-latest
-      steps:
-        - name: local env vars
-          run: |
-            echo "{{ env.first_name }}"
-            echo "{{ env.last_name }}"
-  
+    runs-on: ubuntu-latest
+    steps:
+      - name: local env vars
+        run: |
+          echo "{{ env.first_name }}"
+          echo "{{ env.last_name }}"
