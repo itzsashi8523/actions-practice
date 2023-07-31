@@ -21,4 +21,7 @@ jobs:
       LAST_NAME: Kanth
     steps:
       - name: display local vars
-        run: echo "{{ env.FIRST_NAME }}"
+        run: |
+            echo "${{ env.FIRST_NAME }}"
+            echo "${{ env.LAST_NAME }}"
+            echo "Hi ${{ env.USER}}"
