@@ -3,7 +3,7 @@ on: workflow_dispatch
 env:
   USER: sasi
 jobs:
-  display_golbal_vars:
+  display_global_vars:
     runs-on: ubuntu-latest
     steps:
       - name: display date
