@@ -12,5 +12,5 @@ jobs:
           ls -l
           who
       - name: env vars display
-        run: echo "${{ env.user }}""
+        run: echo "${{ env.user }}"
   
