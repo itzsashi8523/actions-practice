@@ -1,7 +1,7 @@
-name: env_variables
+name: env-variables
 on: [push, workflow_dispatch]
 env:
-  user: sasi
+  USER: sasi
 jobs:
   display_vars:
     runs-on: ubuntu-latest
@@ -12,7 +12,7 @@ jobs:
           ls -l
           who
       - name: env vars display
-        run: echo "${{ env.user }}"
+        run: echo "${{ env.USER }}"
   greetings:
   env:
     first_name: akula
