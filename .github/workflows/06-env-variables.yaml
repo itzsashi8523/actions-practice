@@ -4,9 +4,6 @@ on:
 #  push:
 #    branches:
 #      - develop
-#  push:
-#    branches:
-#      - develop
 env:
   DB_NAME: my-test-db
   DB_USER: sasi
