@@ -18,3 +18,14 @@ jobs:
               echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
               echo "GITHUB_SHA: ${GITHUB_SHA}"
               echo "GITHUB_REF: ${GITHUB_REF}"
+# O/P:
+# Run echo "Home: ${HOME}"
+# Home: /home/runner
+# GITHUB_WORKFLOW: env-types-example
+# GITHUB_ACTIONS: true
+# GITHUB_ACTOR: itzsashi8523
+# GITHUB_REPOSITORY: itzsashi8523/actions-practice
+# GITHUB_EVENT_NAME: workflow_dispatch
+# GITHUB_WORKSPACE: /home/runner/work/actions-practice/actions-practice
+# GITHUB_SHA: 43b8c88fbd88fd7c102adc549fdc319ff1f49f1e
+# GITHUB_REF: refs/heads/main
