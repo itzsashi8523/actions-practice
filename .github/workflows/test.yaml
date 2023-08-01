@@ -25,3 +25,12 @@ jobs:
             echo "${{ env.FIRST_NAME }}"
             echo "${{ env.LAST_NAME }}"
             echo "Hi ${{ env.USER}}"
+  display_local_vars:
+    needs: display_local_vars
+    runs-on: ubuntu-latest
+    steps:
+      - name: display local vars fron different jobs
+        run: |
+            echo "${{ env.FIRST_NAME }}"
+            echo "${{ env.LAST_NAME }}"
+            echo "Hi ${{ env.USER}}"
