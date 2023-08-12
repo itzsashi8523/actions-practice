@@ -1,37 +1,14 @@
-# name: env-vars
-# #on: [workflow_dispatch, push]
-# on: workflow_dispatch
-# env:
-#   USER: sasi
-# jobs:
-#   display_global_vars:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: display date
-#         run: |
-#             date
-#             ls -l
-#             who
-#       - name: env vars display
-#         run: echo "${{ env.USER }}"
-#   display_local_vars:
-#     needs: display_global_vars
-#     runs-on: ubuntu-latest
-#     env:
-#       FIRST_NAME: Akula
-#       LAST_NAME: Kanth
-#     steps:
-#       - name: display local vars
-#         run: |
-#             echo "${{ env.FIRST_NAME }}"
-#             echo "${{ env.LAST_NAME }}"
-#             echo "Hi ${{ aenv.USER}}"
-#   display_local_vars:
-#     needs: display_local_vars
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: display local vars fron different jobs
-#         run: |
-#             echo "${{ env.FIRST_NAME }}"
-#             echo "${{ env.LAST_NAME }}"
-#             echo "Hi ${{ env.USER}}"
+name: practice-workflow
+on: workflow_dispatch
+env:
+  DB_USER: testdbuser
+  DB_PORT: 5432
+jobs:
+  global-env-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display global-envs
+        run: |
+            echo "${DB_USER}" >> ${{ GITHUB_ENV }}
+            echo "${DB_PORT}" >> ${{ GITHUB_ENV }}
+            echo "${{ GITHUB_ENV }}"
