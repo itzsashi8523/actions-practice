@@ -13,4 +13,4 @@ jobs:
             echo "${{ env.DB_PORT }}"
             echo "${{ env.DB_USER }}" >> $GITHUB_ENV
             echo "${{ env.DB_PORT }}" >> $GITHUB_ENV
-            #cat $GITHUB_ENV
+            cat $GITHUB_ENV
