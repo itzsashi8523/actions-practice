@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Store env vars
-        run: echo "MY_NAME=Local" >> $GITHUB_ENV
+        run: echo "MY_NAMES=Local" >> $GITHUB_ENV
       - name: Display Environment Variable
         run: echo "${{ env.MY_NAME }}"
