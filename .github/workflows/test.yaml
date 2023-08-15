@@ -10,6 +10,7 @@ jobs:
         run: echo "MY_NAME=Local" >> $GITHUB_ENV
   display-stored-vars:
     runs-on: ubuntu-latest
+    needs: global-env-vars
     steps:
       - name: Display Environment Variable
         run: echo "${{ env.MY_NAME }}"
