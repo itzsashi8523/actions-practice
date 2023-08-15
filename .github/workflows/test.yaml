@@ -1,13 +1,12 @@
 name: practice-workflow
 on: workflow_dispatch
 env:
-  MY_NAME: Global
   DB_PORT: 5432
 jobs:
   global-env-vars:
     runs-on: ubuntu-latest
     steps:
-      - name: display global-envs
+      - name: Store env vars
         run: echo "MY_NAME=Local" >> $GITHUB_ENV
       - name: Display Environment Variable
         run: echo "${{ env.MY_NAME }}"
