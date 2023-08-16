@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Store env vars
         run: echo "MY_NAME=Local" >> $GITHUB_ENV
-      - name: Display Environment Variable
+      - name: Display Global Environment Variable
         run: echo "${{ env.MY_NAME }}"
       - name: secrets display
         run: echo ${{ env.DB_NAME }}
