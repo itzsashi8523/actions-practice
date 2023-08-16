@@ -2,6 +2,7 @@ name: practice-workflow
 on: workflow_dispatch
 env:
   MY_NAME: Sasi
+  DB_NAME: ${{ secrets.DB_NAME }}
 jobs:
   global-env-vars:
     runs-on: ubuntu-latest
@@ -10,3 +11,5 @@ jobs:
         run: echo "MY_NAME=Local" >> $GITHUB_ENV
       - name: Display Environment Variable
         run: echo "${{ env.MY_NAME }}"
+      - name: secrets display
+        run: echo ${{ env.DB_NAME }}
