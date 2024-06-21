@@ -10,4 +10,4 @@ jobs:
             id tom
             cat /etc/passwd | grep tom
             date
-            echo "Hi $USER"
+            echo "Hi $USER Welcome"
