@@ -1,13 +1,12 @@
-name: first-job
-on: workflow_dispatch
+name: hellow_world
+on: push
 jobs:
-  first-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: using env variables
-        run: |
-            sudo useradd tom
-            id tom
-            cat /etc/passwd | grep tom
-            date
-            echo "Hi $USER Welcome"
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Welcome Message
+          run: echo "Hello Everyone"
+        - name: list files
+          run: ls -la
+        - name: Readme file
+          run: cat README.md
