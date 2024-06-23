@@ -1,14 +1,14 @@
-name: hellow_world
+name: first-workflow
 on: push
 jobs:
-    first_job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout Repo
-          uses: actions/checkout@v4
-        - name: Welcome Message
-          run: echo "Hello Everyone"
-        - name: list files
-          run: ls -la
-        - name: Readme file
-          run: cat README.md
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository to local
+        uses: actions/checkout@v4
+
+      - name: Welcome Message
+        run: echo "Hello Mr Sasi"
+
+      - name: Listing files and floders
+        run: ls -ltra
