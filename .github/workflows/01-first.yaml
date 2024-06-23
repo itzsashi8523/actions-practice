@@ -7,13 +7,13 @@ jobs:
       - name: checkout repository to local
         uses: actions/checkout@v4
 
-      - name: Welcome Message
-        run: |
-          echo "Hello Mr Kanth"
-          ls -ltra
-          cd .github/workflows
-          ls -ltr
-      #   run: echo "Hello Mr Sasi"
+      - name: Executing a Shell Script
+        run: ./my-script.sh
+      #     echo "Hello Mr Kanth"
+      #     ls -ltra
+      #     cd .github/workflows
+      #     ls -ltr
+      # #   run: echo "Hello Mr Sasi"
 
-      # - name: Listing files and floders
-      #   run: ls -ltra
+      # # - name: Listing files and floders
+      # #   run: ls -ltra
