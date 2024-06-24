@@ -38,6 +38,6 @@ jobs:
       - name: Downloading Artifact
         uses: actions/download-artifact@v4
         with:
-          name: code
+          name: code-file
       - name: Deploy the Code
-        run: echo "Deployingn the code........." && cat code
+        run: echo "Deployingn the code........." && cat code-file
