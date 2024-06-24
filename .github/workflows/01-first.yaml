@@ -16,11 +16,13 @@ jobs:
       - name: Code file content
         run: cat /tmp/code
   test-job:
+    needs: build-job
     runs-on: ubuntu-latest
     steps:
       - name: Test the Application
         run: ls -l /tmp/code
   deploy-job:
+    needs: [build-job, test-job]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the Code
