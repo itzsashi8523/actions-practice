@@ -12,9 +12,13 @@ jobs:
           chmod +x my-script.sh
           ./my-script.sh
       - name: creating deploy file
-        run: echo "Code Testing & Deploying" > /tmp/code
+        run: echo "Uploading file & Code Testing & Deploying" > /tmp/code
       - name: Code file content
         run: cat /tmp/code
+      - name: Uploading Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: /tmp/code
   test-job:
     needs: build-job
     runs-on: ubuntu-latest
@@ -25,5 +29,9 @@ jobs:
     needs: [build-job]
     runs-on: ubuntu-latest
     steps:
+      - name: Downloading Artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: code
       - name: Deploy the Code
-        run: echo "Deployingn the code........." && cat /tmp/code
+        run: echo "Deployingn the code........." && cat code
