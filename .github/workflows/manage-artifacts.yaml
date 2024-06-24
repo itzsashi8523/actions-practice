@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: creating code war file
-        run: echo "This is war file of project code" > /mnt/artifact.txt
+        run: echo "This is war file of project code" > /tmp/artifact.txt
       - name: Uploading Artifacts to GH
         uses: actions/upload-artifact@v4
         with:
