@@ -29,7 +29,7 @@ jobs:
         with:
           name: code-file
       - name: Test the Application
-        run: cat code-file
+        run: cat /home/runner/work/actions-practice/actions-practice/code-file
   deploy-job:
     needs: [build-job]
     runs-on: ubuntu-latest
@@ -39,4 +39,4 @@ jobs:
         with:
           name: code-file
       - name: Deploy the Code
-        run: echo "Deployingn the code........." && cat code-file
+        run: echo "Deployingn the code........." && cat /home/runner/work/actions-practice/actions-practice/code-file
