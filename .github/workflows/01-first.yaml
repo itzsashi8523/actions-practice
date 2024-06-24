@@ -1,7 +1,7 @@
 name: first-workflow
 on: push
 jobs:
-  first-job:
+  build-job:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository to local
@@ -11,11 +11,17 @@ jobs:
         run: |
           chmod +x my-script.sh
           ./my-script.sh
-      #     echo "Hello Mr Kanth"
-      #     ls -ltra
-      #     cd .github/workflows
-      #     ls -ltr
-      # #   run: echo "Hello Mr Sasi"
-
-      # # - name: Listing files and floders
-      # #   run: ls -ltra
+      - name: creating deploy file
+        run: echo "Code Testing & Deploying" > /tmp/code
+      - name: Code file content
+        run: cat /tmp/code
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the Application
+        run: ls -l /tmp/code
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the Code
+        run: echo "Deployingn the code........." && cat /tmp/code
