@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test the Application
-        run: ls -l /tmp/code
+        run: ls -l /tmp
   deploy-job:
     needs: [build-job, test-job]
     runs-on: ubuntu-latest
