@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Print Workflow Level Environment Variable
         run: echo "$WORKFLOW_LEVEL_VAR"
+        run: echo "${{ env.WORKFLOW_LEVEL_VAR }}"
 
       - name: Print Job Level Environment Variable
         run: echo "$JOB_LEVEL_VAR"
