@@ -12,7 +12,8 @@ jobs:
       WORKFLOW_VAR: "job_value"
     steps:
       - uses: actions/checkout@v3
-
+        with:
+          ref: 'main'
       - name: Print workflow variable
         run: 'echo Workflow variable:' "$WORKFLOW_VAR"
       - name: Set step variable
