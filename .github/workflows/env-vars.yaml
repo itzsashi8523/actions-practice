@@ -1,22 +1,29 @@
-name: Environment Variable Example
+name: Example Workflow with Environment Variables
 
-env:
-  # Workflow level variable
-  WORKFLOW_VAR: "global_value"
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build-and-test:
+  environment_variables_example:
     runs-on: ubuntu-latest
     env:
-      # Job level variable (overrides workflow level for this job)
-      WORKFLOW_VAR: "job_value"
+      JOB_LEVEL_VAR: "This is a job-level variable"
+
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: 'main'
-      - name: Print workflow variable
-        run: echo "Workflow variable: $WORKFLOW_VAR"
-      - name: Set step variable
-        env:
-          STEP_VAR: "step_value"
-        run: echo "Step variable: $STEP_VAR"
+      - name: Print Job Level Environment Variable
+        run: echo "$JOB_LEVEL_VAR"
+
+      - name: Set Step Level Environment Variable
+        run: echo "::set-env name=STEP_LEVEL_VAR::This is a step-level variable"
+
+      - name: Print Step Level Environment Variable
+        run: echo "$STEP_LEVEL_VAR"
+
+      - name: Print Workflow Level Environment Variables
+        run: |
+          echo "Workflow level variables:"
+          echo "  GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+          echo "  GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+          echo "  GITHUB_SHA: $GITHUB_SHA"
