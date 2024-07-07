@@ -1,24 +1,24 @@
-name: Example Workflow with Environment Variables
+name: Env-Vars-Example-Workflow
 
-on:
-  push:
-    branches:
-      - main
-
+on: push
+env:
+  WORKFLOW_LEVEL_VAR: "This is workflow Variable"
 jobs:
-  environment_variables_example:
+  build_job:
     runs-on: ubuntu-latest
     env:
       JOB_LEVEL_VAR: "This is a job-level variable"
 
     steps:
+      - name: Print Workflow Level Environment Variable
+        run: echo "$WORKFLOW_LEVEL_VAR"
+
       - name: Print Job Level Environment Variable
         run: echo "$JOB_LEVEL_VAR"
 
-      - name: Set Step Level Environment Variable
-        run: echo "::set-env name=STEP_LEVEL_VAR::This is a step-level variable"
-
       - name: Print Step Level Environment Variable
+        env:
+          STEP_LEVEL_VAR: "This is Step Level Variable"  
         run: echo "$STEP_LEVEL_VAR"
 
       - name: Print Workflow Level Environment Variables
