@@ -15,8 +15,8 @@ jobs:
         with:
           ref: 'main'
       - name: Print workflow variable
-        run: 'echo Workflow variable:' "$WORKFLOW_VAR"
+        run: echo "Workflow variable: $WORKFLOW_VAR"
       - name: Set step variable
         env:
           STEP_VAR: "step_value"
-        run: echo 'Step variable:' "$STEP_VAR"
+        run: echo "Step variable: $STEP_VAR"
