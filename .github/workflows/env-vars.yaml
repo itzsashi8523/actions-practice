@@ -1,31 +1,12 @@
-name: Env-Vars-Example-Workflow
-
+name: env variables test
 on: push
 env:
-  WORKFLOW_LEVEL_VAR: "This is workflow Variable"
+  WORKFLOW_VAR: "This is workflow level variable"
 jobs:
-  build_job:
+  build-job:
     runs-on: ubuntu-latest
-    env:
-      JOB_LEVEL_VAR: "This is a job-level variable"
-
     steps:
-      - name: Print Workflow Level Environment Variable
-        run: |
-          echo "$WORKFLOW_LEVEL_VAR"
-          echo "${{ env.WORKFLOW_LEVEL_VAR }}"
-
-      - name: Print Job Level Environment Variable
-        run: echo "$JOB_LEVEL_VAR"
-
-      - name: Print Step Level Environment Variable
-        env:
-          STEP_LEVEL_VAR: "This is Step Level Variable"  
-        run: echo "$STEP_LEVEL_VAR"
-
-      - name: Print Workflow Level Environment Variables
-        run: |
-          echo "Workflow level variables:"
-          echo "  GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
-          echo "  GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
-          echo "  GITHUB_SHA: $GITHUB_SHA"
+      - name: checkout the code
+        uses: actions/checkout@v4
+      - name: Display workflow level variables
+        run: echo "${{ env.WORKFLOW_VAR }}"    
