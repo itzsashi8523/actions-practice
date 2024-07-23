@@ -21,4 +21,8 @@ jobs:
       - name: code checkout
         uses: actions/checkout@v3
       - name: confirmation
-        run: echo "Workflow is: $GITHUB_REPOSITORY"
+        run: |
+          echo "Current Workflow: $GITHUB_WORKFLOW"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "SHA: $GITHUB_SHA"
+          echo "Event name: $GITHUB_EVENT_NAME"
