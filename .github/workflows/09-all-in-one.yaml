@@ -14,3 +14,9 @@ jobs:
           ls -l /tmp
           mkdir /tmp/test
           touch /tmp/test/data
+  build-job:
+    needs: display-values
+    runs-on: ubuntu-latest
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v3
