@@ -1,0 +1,16 @@
+name: all-in-one-practice
+on: [workflow_dispatch, push]
+jobs:
+  display-values:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Values with echo
+        run: echo "Hello $USER"
+      - name: Run Shell Commands
+        run: ls -l /etc
+      - name: run multiple commands
+        run: |
+          echo "Hello World"
+          ls -l /tmp
+          mkdir /tmp/test
+          touch /tmp/test/data
