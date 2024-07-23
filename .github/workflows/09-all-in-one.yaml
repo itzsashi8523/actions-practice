@@ -21,4 +21,4 @@ jobs:
       - name: code checkout
         uses: actions/checkout@v3
       - name: confirmation
-        run: echo "$GITHUB_REPOSITORY Cloned"
+        run: echo "env.$GITHUB_REPOSITORY Cloned"
