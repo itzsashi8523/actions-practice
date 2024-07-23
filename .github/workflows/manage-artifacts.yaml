@@ -1,0 +1,33 @@
+name: manage artifacts
+on: workflow_dispatch
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: creating code war file
+        run: echo "This is war file of project code" > /tmp/artifact.txt
+      - name: Uploading Artifacts to GH
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact-file
+          path: /tmp/artifact.txt
+      - name: Display the war file
+        run: ls -l /tmp/artifact.txt
+  test-job:
+    runs-on: ubuntu-latest
+    needs: build-job
+    steps:
+      - name: Downloading the project file
+        uses: actions/download-artifact@v4
+        with:
+          name: artifact-file
+      - name: Testing the Project code
+        run: ls -l
+  deploy-job:
+    runs-on: ubuntu-latest
+    needs: build-job
+    steps:
+      - name: DOwnloading Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: artifact-file
