@@ -9,7 +9,7 @@ jobs:
   build-job:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout the code
-        uses: actions/checkout@v4
-      - name: Display workflow level variables
-        run: echo "${{ env.WORKFLOW_VAR }}"    
+      - name: Display name
+        run: |
+          cat /etc/passwd
+          ls -l /root
