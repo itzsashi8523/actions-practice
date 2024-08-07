@@ -1,8 +1,8 @@
 name: env variables test
 #on: push
-on:
-  schedule:
-    - cron: "* */1 * * *"
+on: workflow_dispatch
+  #schedule:
+  # - cron: "* */1 * * *"
 env:
   WORKFLOW_VAR: "This is workflow level variable"
 jobs:
